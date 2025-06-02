@@ -1,6 +1,6 @@
 package ru.practicum.services.qa.scooter.models;
 
-public class Courier {
+public class CourierRequest {
 
     private String login;
 
@@ -8,13 +8,13 @@ public class Courier {
 
     private String firstName;
 
-    public Courier(String login, String password, String firstName) {
+    public CourierRequest(String login, String password, String firstName) {
         this.login = login;
         this.password = password;
         this.firstName = firstName;
     }
 
-    public Courier() {
+    public CourierRequest() {
     }
 
     public String getLogin() {

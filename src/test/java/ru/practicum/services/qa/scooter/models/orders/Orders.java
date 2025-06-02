@@ -1,10 +1,10 @@
-package ru.practicum.services.qa.scooter.models.OrdersModel;
+package ru.practicum.services.qa.scooter.models.orders;
 
 public class Orders {
 
-    private String id;
+    private Integer id;
 
-    private int courierId;
+    private Integer courierId;
 
     private String firstName;
 
@@ -16,11 +16,11 @@ public class Orders {
 
     private String phone;
 
-    private int rentTime;
+    private Integer rentTime;
 
     private String deliveryDate;
 
-    private int track;
+    private Integer track;
 
     private String[] color;
 
@@ -30,21 +30,21 @@ public class Orders {
 
     private String updatedAt;
 
-    private int status;
+    private Integer status;
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public int getCourierId() {
+    public Integer getCourierId() {
         return courierId;
     }
 
-    public void setCourierId(int courierId) {
+    public void setCourierId(Integer courierId) {
         this.courierId = courierId;
     }
 
@@ -88,11 +88,11 @@ public class Orders {
         this.phone = phone;
     }
 
-    public int getRentTime() {
+    public Integer getRentTime() {
         return rentTime;
     }
 
-    public void setRentTime(int rentTime) {
+    public void setRentTime(Integer rentTime) {
         this.rentTime = rentTime;
     }
 
@@ -104,11 +104,11 @@ public class Orders {
         this.deliveryDate = deliveryDate;
     }
 
-    public int getTrack() {
+    public Integer getTrack() {
         return track;
     }
 
-    public void setTrack(int track) {
+    public void setTrack(Integer track) {
         this.track = track;
     }
 
@@ -144,11 +144,11 @@ public class Orders {
         this.updatedAt = updatedAt;
     }
 
-    public int getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 }

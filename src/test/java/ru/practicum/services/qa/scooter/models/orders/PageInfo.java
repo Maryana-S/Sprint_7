@@ -1,4 +1,4 @@
-package ru.practicum.services.qa.scooter.models.OrdersModel;
+package ru.practicum.services.qa.scooter.models.orders;
 
 public class PageInfo {
 
