@@ -14,13 +14,13 @@ import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 @RunWith(Parameterized.class)
-public class PostOrdersTests extends BaseTest {
+public class PostOrdersTest extends BaseTest {
 
     private String[] color;
 
     public Integer trackId;
 
-    public PostOrdersTests(String[] color) {
+    public PostOrdersTest(String[] color) {
         this.color = color;
     }
 

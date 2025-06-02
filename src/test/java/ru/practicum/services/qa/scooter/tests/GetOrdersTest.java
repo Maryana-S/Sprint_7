@@ -18,7 +18,7 @@ import java.util.Map;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-public class GetOrdersTests extends BaseTest {
+public class GetOrdersTest extends BaseTest {
 
     String login;
     String password;
@@ -52,7 +52,7 @@ public class GetOrdersTests extends BaseTest {
     @Test
     @DisplayName("Проверка, что возвращается список заказов, при отправке GET запроса без query параметров на эндпоинт /api/v1/orders")
     @Description("Получение списка заказов. Отправка GET запроса без query параметров на эндпоинт /api/v1/orders")
-    public void getOrdersNoQueryParamReturnOrders() {
+    public void getOrdersNoQueryParamReturnOrdersTest() {
         GetOrdersResponse ordersResponse = Requests.getOrders()
                 .then()
                 .statusCode(200)
@@ -65,7 +65,7 @@ public class GetOrdersTests extends BaseTest {
     @Test
     @DisplayName("Проверка, что возвращается список заказов, при отправке GET запроса c courierId на эндпоинт /api/v1/orders")
     @Description("Получение списка заказов. Отправка GET запроса c courierId на эндпоинт /api/v1/orders.")
-    public void getOrdersWithCourierIdReturnOrders() {
+    public void getOrdersWithCourierIdReturnOrdersTest() {
         Requests.acceptOrder(orderId, courierId);
         Response orders = Requests.getOrders(Map.of("courierId", courierId));
         orders
@@ -78,7 +78,7 @@ public class GetOrdersTests extends BaseTest {
     @Test
     @DisplayName("Проверка, что возвращается список заказов, при отправке GET запроса c courierId и nearestStation на эндпоинт /api/v1/orders")
     @Description("Получение списка заказов. Отправка GET запроса c courierId и nearestStation на эндпоинт /api/v1/orders.")
-    public void getOrdersWithNearestStationReturnOrders() {
+    public void getOrdersWithNearestStationReturnOrdersTest() {
         Requests.acceptOrder(orderId, courierId);
         String metroStationNumber = new PostOrdersRequest().getMetroStation();
         Map<String, Object> queryParams = new HashMap<>();
@@ -97,7 +97,7 @@ public class GetOrdersTests extends BaseTest {
     @Test
     @DisplayName("Проверка, что возвращается список заказов, при отправке GET запроса c limit и page на эндпоинт /api/v1/orders")
     @Description("Получение ограниченного списка заказов на указанной странице. Отправка GET запроса c limit и page на эндпоинт /api/v1/orders.")
-    public void getOrdersWithLimitAndPageReturnOrders() {
+    public void getOrdersWithLimitAndPageReturnOrdersTest() {
         int limit = 15;
         int page = 2;
         Map<String, Object> queryParams = new HashMap<>();
@@ -116,7 +116,7 @@ public class GetOrdersTests extends BaseTest {
     @Test
     @DisplayName("Проверка, что возвращается список заказов, при отправке GET запроса c limit, page и nearestStation на эндпоинт /api/v1/orders")
     @Description("Получение ограниченного списка заказов на указанной странице и станции метро. Отправка GET запроса c limit, page и nearestStation на эндпоинт /api/v1/orders.")
-    public void getOrdersWithLimitPageAndNearestStationReturnOrders() {
+    public void getOrdersWithLimitPageAndNearestStationReturnOrdersTest() {
         Requests.acceptOrder(orderId, courierId);
         String metroStationNumber = new PostOrdersRequest().getMetroStation();
         int limit = 5;

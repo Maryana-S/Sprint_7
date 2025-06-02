@@ -14,7 +14,7 @@ import ru.practicum.services.qa.scooter.utils.Requests;
 
 import static org.hamcrest.CoreMatchers.*;
 
-public class PostCourierLoginTests extends BaseTest {
+public class PostCourierLoginTest extends BaseTest {
 
     private final String NOT_FOUND_MESSAGE = "Учетная запись не найдена";
     private final String BAD_REQUEST_MESSAGE = "Недостаточно данных для входа";

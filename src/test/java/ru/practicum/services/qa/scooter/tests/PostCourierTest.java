@@ -11,7 +11,7 @@ import ru.practicum.services.qa.scooter.utils.Requests;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.equalTo;
 
-public class PostCourierTests extends BaseTest {
+public class PostCourierTest extends BaseTest {
 
     private final String BAD_REQUEST_MESSAGE = "Недостаточно данных для создания учетной записи";
     private final String CONFLICT_MESSAGE = "Этот логин уже используется";
