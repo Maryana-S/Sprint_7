@@ -15,6 +15,7 @@ import ru.practicum.services.qa.scooter.utils.Requests;
 import java.util.HashMap;
 import java.util.Map;
 
+import static org.apache.http.HttpStatus.SC_OK;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -55,7 +56,7 @@ public class GetOrdersTest extends BaseTest {
     public void getOrdersNoQueryParamReturnOrdersTest() {
         GetOrdersResponse ordersResponse = Requests.getOrders()
                 .then()
-                .statusCode(200)
+                .statusCode(SC_OK)
                 .extract()
                 .body()
                 .as(GetOrdersResponse.class);
@@ -70,7 +71,7 @@ public class GetOrdersTest extends BaseTest {
         Response orders = Requests.getOrders(Map.of("courierId", courierId));
         orders
                 .then()
-                .statusCode(200);
+                .statusCode(SC_OK);
         assertThat("Массив orders пустой", orders.as(GetOrdersResponse.class).getOrders().length > 0);
         assertThat(courierId, equalTo(orders.as(GetOrdersResponse.class).getOrders()[0].getCourierId()));
     }
@@ -83,10 +84,10 @@ public class GetOrdersTest extends BaseTest {
         String metroStationNumber = new PostOrdersRequest().getMetroStation();
         Map<String, Object> queryParams = new HashMap<>();
         queryParams.put("courierId", courierId);
-        queryParams.put("nearestStation", "[\""+ metroStationNumber + "\"]");
+        queryParams.put("nearestStation", "[\"" + metroStationNumber + "\"]");
         GetOrdersResponse getOrdersResponse = Requests.getOrders(queryParams)
                 .then()
-                .statusCode(200)
+                .statusCode(SC_OK)
                 .extract()
                 .as(GetOrdersResponse.class);
         assertThat("Массив orders пустой", getOrdersResponse.getOrders().length > 0);
@@ -105,10 +106,10 @@ public class GetOrdersTest extends BaseTest {
         queryParams.put("page", page);
         GetOrdersResponse orders = Requests.getOrders(queryParams)
                 .then()
-                .statusCode(200)
+                .statusCode(SC_OK)
                 .extract()
                 .as(GetOrdersResponse.class);
-        assertThat("Количество заказов на странице больше значения limit",limit >= orders.getOrders().length);
+        assertThat("Количество заказов на странице больше значения limit", limit >= orders.getOrders().length);
         assertThat(limit, equalTo(orders.getPageInfo().getLimit()));
         assertThat(page, equalTo(orders.getPageInfo().getPage()));
     }
@@ -124,13 +125,13 @@ public class GetOrdersTest extends BaseTest {
         Map<String, Object> queryParams = new HashMap<>();
         queryParams.put("limit", limit);
         queryParams.put("page", page);
-        queryParams.put("nearestStation", "[\""+ metroStationNumber + "\"]");
+        queryParams.put("nearestStation", "[\"" + metroStationNumber + "\"]");
         GetOrdersResponse orders = Requests.getOrders(queryParams)
                 .then()
-                .statusCode(200)
+                .statusCode(SC_OK)
                 .extract()
                 .as(GetOrdersResponse.class);
-        assertThat("Количество заказов на странице больше значения limit",limit >= orders.getOrders().length);
+        assertThat("Количество заказов на странице больше значения limit", limit >= orders.getOrders().length);
         assertThat(limit, equalTo(orders.getPageInfo().getLimit()));
         assertThat(page, equalTo(orders.getPageInfo().getPage()));
         assertThat(metroStationNumber, equalTo(orders.getOrders()[0].getMetroStation()));
@@ -139,15 +140,9 @@ public class GetOrdersTest extends BaseTest {
     @After
     @Step("Удаление тестовых данных")
     public void clearTestData() {
-        if(courierId != null) {
-            Requests.deleteCourier(courierId);
-        }
-        if(orderId != null) {
-            Requests.finishOrder(orderId);
-        }
-        if(trackId != null) {
-            Requests.cancelOrder(trackId);
-        }
+        Requests.deleteCourier(courierId);
+        Requests.finishOrder(orderId);
+        Requests.cancelOrder(trackId);
     }
 
 }

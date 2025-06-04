@@ -9,6 +9,7 @@ import ru.practicum.services.qa.scooter.models.PostOrdersRequest;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
+import static ru.practicum.services.qa.scooter.utils.Endpoints.*;
 
 public class Requests {
 
@@ -18,7 +19,7 @@ public class Requests {
                 .header("Content-type", "application/json")
                 .body(courier)
                 .when()
-                .post("/api/v1/courier");
+                .post(COURIER);
     }
 
     @Step("Отправка POST запроса на эндпоинт /api/v1/courier/login. Логин курьера в системе")
@@ -27,7 +28,7 @@ public class Requests {
                 .header("Content-type", "application/json")
                 .body(courierLogin)
                 .when()
-                .post("/api/v1/courier/login");
+                .post(COURIER_LOGIN);
     }
 
     @Step("Отправка POST запроса на эндпоинт /api/v1/orders. Создание заказа")
@@ -36,7 +37,7 @@ public class Requests {
                 .header("Content-type", "application/json")
                 .body(postOrders)
                 .when()
-                .post("/api/v1/orders");
+                .post(ORDERS);
     }
 
     @Step("Отправка GET запроса на эндпоинт /api/v1/orders. Получение списка заказов")
@@ -44,7 +45,7 @@ public class Requests {
         return given()
                 .header("Content-type", "application/json")
                 .when()
-                .get("/api/v1/orders");
+                .get(ORDERS);
     }
 
     @Step("Отправка GET запроса с необязательными параметрами на эндпоинт /api/v1/orders. Получение списка заказов")
@@ -53,7 +54,7 @@ public class Requests {
                 .header("Content-type", "application/json")
                 .when()
                 .queryParams(params)
-                .get("/api/v1/orders");
+                .get(ORDERS);
     }
 
     @Step("Отправка DELETE запроса на эндпоинт /api/v1/courier/:id. Удаление курьера")
@@ -62,7 +63,7 @@ public class Requests {
                 .header("Content-type", "application/json")
                 .when()
                 .pathParam("courierId", courierId)
-                .delete("/api/v1/courier/{courierId}");
+                .delete(COURIER_BY_ID);
     }
 
     @Step("Отправка PUT запроса на эндпоинт /api/v1/orders/accept/:id. Принять заказ")
@@ -72,7 +73,7 @@ public class Requests {
                 .when()
                 .pathParam("orderId", orderId)
                 .queryParams("courierId", courierId)
-                .put("/api/v1/orders/accept/{orderId}");
+                .put(ACCEPT_ORDERS_BY_ID);
     }
 
     @Step("Отправка GET запроса на эндпоинт /api/v1/orders/track. Получить заказ по его номеру")
@@ -81,7 +82,7 @@ public class Requests {
                 .header("Content-type", "application/json")
                 .when()
                 .queryParams("t", trackId)
-                .get("/api/v1/orders/track");
+                .get(ORDERS_TRACK);
     }
 
     @Step("Отправка PUT запроса на эндпоинт /api/v1/orders/finish/:id. Завершить заказ")
@@ -90,7 +91,7 @@ public class Requests {
                 .header("Content-type", "application/json")
                 .when()
                 .pathParam("orderId", orderId)
-                .put("/api/v1/orders/finish/{orderId}");
+                .put(FINISH_ORDER_BY_ID);
     }
 
     @Step("Отправка PUT запроса на эндпоинт /api/v1/orders/cancel. Отменить заказ")
@@ -98,7 +99,7 @@ public class Requests {
         given()
                 .header("Content-type", "application/json")
                 .when()
-                .body("{\"track\":" + trackId + "}")
-                .put("/api/v1/orders/cancel");
+                .queryParam("track", trackId)
+                .put(CANCEL_ORDER);
     }
 }

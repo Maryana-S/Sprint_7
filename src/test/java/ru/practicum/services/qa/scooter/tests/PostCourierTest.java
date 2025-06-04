@@ -4,10 +4,15 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Step;
 import io.qameta.allure.junit4.DisplayName;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import ru.practicum.services.qa.scooter.models.CourierLoginRequest;
+import ru.practicum.services.qa.scooter.models.CourierLoginSuccessResponse;
 import ru.practicum.services.qa.scooter.models.CourierRequest;
 import ru.practicum.services.qa.scooter.utils.Requests;
+
+import static org.apache.http.HttpStatus.*;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.equalTo;
 
@@ -17,11 +22,15 @@ public class PostCourierTest extends BaseTest {
     private final String CONFLICT_MESSAGE = "Этот логин уже используется";
 
     CourierRequest courier;
+    String login;
+    String password;
 
     @Before
     @Step("Инициализация обекта класса CourierRequest")
-    public void initCourier() {
-        courier = new CourierRequest(RandomStringUtils.randomAlphabetic(13), "test" + RandomStringUtils.randomNumeric(3), RandomStringUtils.randomAlphabetic(10));
+    public void initParams() {
+        login = RandomStringUtils.randomAlphabetic(13);
+        password = "test" + RandomStringUtils.randomNumeric(3);
+        courier = new CourierRequest(login, password, RandomStringUtils.randomAlphabetic(10));
     }
 
     @Test
@@ -30,7 +39,7 @@ public class PostCourierTest extends BaseTest {
     public void postCourierAllParamSuccessTest() {
         Requests.postCourier(courier)
                 .then()
-                .statusCode(201)
+                .statusCode(SC_CREATED)
                 .and()
                 .assertThat().body("ok", equalTo(true));
     }
@@ -42,7 +51,7 @@ public class PostCourierTest extends BaseTest {
         courier.setFirstName("");
         Requests.postCourier(courier)
                 .then()
-                .statusCode(201)
+                .statusCode(SC_CREATED)
                 .and()
                 .assertThat().body("ok", equalTo(true));
     }
@@ -54,7 +63,7 @@ public class PostCourierTest extends BaseTest {
         courier.setLogin("");
         Requests.postCourier(courier)
                 .then()
-                .statusCode(400)
+                .statusCode(SC_BAD_REQUEST)
                 .and()
                 .assertThat().body("message", equalTo(BAD_REQUEST_MESSAGE));
     }
@@ -66,7 +75,7 @@ public class PostCourierTest extends BaseTest {
         courier.setPassword("");
         Requests.postCourier(courier)
                 .then()
-                .statusCode(400)
+                .statusCode(SC_BAD_REQUEST)
                 .and()
                 .assertThat().body("message", equalTo(BAD_REQUEST_MESSAGE));
     }
@@ -80,9 +89,21 @@ public class PostCourierTest extends BaseTest {
         courier.setFirstName(RandomStringUtils.randomAlphabetic(10));
         Requests.postCourier(courier)
                 .then()
-                .statusCode(409)
+                .statusCode(SC_CONFLICT)
                 .and()
                 .assertThat().body("message", containsString(CONFLICT_MESSAGE));
+    }
+
+    @After
+    @Step("Удаление созданного курьера")
+    public void deleteCourier() {
+        try {
+            int courierId = Requests.postCourierLogin(new CourierLoginRequest(login, password)).as(CourierLoginSuccessResponse.class).getId();
+            Requests.deleteCourier(courierId);
+        }
+        catch (NullPointerException ignore) {
+            // Курьер не был создан в негативных сценариях, удаление не требуется
+        }
     }
 
 }

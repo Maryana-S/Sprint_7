@@ -1,5 +1,10 @@
 package ru.practicum.services.qa.scooter.models.orders;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
 public class GetOrdersResponse {
 
     private Orders[] orders;
@@ -8,27 +13,4 @@ public class GetOrdersResponse {
 
     private AvailableStations[] availableStations;
 
-    public Orders[] getOrders() {
-        return orders;
-    }
-
-    public void setOrders(Orders[] orders) {
-        this.orders = orders;
-    }
-
-    public PageInfo getPageInfo() {
-        return pageInfo;
-    }
-
-    public void setPageInfo(PageInfo pageInfo) {
-        this.pageInfo = pageInfo;
-    }
-
-    public AvailableStations[] getAvailableStations() {
-        return availableStations;
-    }
-
-    public void setAvailableStations(AvailableStations[] availableStations) {
-        this.availableStations = availableStations;
-    }
 }
