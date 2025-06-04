@@ -1,0 +1,48 @@
+{
+  "total" : 4,
+  "items" : [ {
+    "uid" : "b556cad28f30da150fefc278f3906ad6",
+    "name" : "ru.practicum.services.qa.scooter.tests.GetOrdersTest",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 5,
+      "unknown" : 0,
+      "total" : 5
+    }
+  }, {
+    "uid" : "7db13d45bc3064ae0ab85bdc6d3a063f",
+    "name" : "ru.practicum.services.qa.scooter.tests.PostCourierLoginTest",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 5,
+      "unknown" : 0,
+      "total" : 5
+    }
+  }, {
+    "uid" : "a3792e89cf0d894d3fe7634d5c7ffe21",
+    "name" : "ru.practicum.services.qa.scooter.tests.PostCourierTest",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 5,
+      "unknown" : 0,
+      "total" : 5
+    }
+  }, {
+    "uid" : "f688edb537db211bff5c8fb29f1699dd",
+    "name" : "ru.practicum.services.qa.scooter.tests.PostOrdersTest",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 4,
+      "unknown" : 0,
+      "total" : 4
+    }
+  } ]
+}

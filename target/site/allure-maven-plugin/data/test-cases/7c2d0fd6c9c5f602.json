@@ -1,0 +1,186 @@
+{
+  "uid" : "7c2d0fd6c9c5f602",
+  "name" : "Проверка успешного логина курьера в системе (статус код 200) при отправке всех обязательных параметров в POST запросе на эндпоинт /api/v1/courier/login",
+  "fullName" : "ru.practicum.services.qa.scooter.tests.PostCourierLoginTest.postCourierLoginAllParamSuccessTest",
+  "historyId" : "3aea9cf4ead7da8ecdf4dced18c10bb2",
+  "time" : {
+    "start" : 1749020685145,
+    "stop" : 1749020686459,
+    "duration" : 1314
+  },
+  "description" : "Отправка всех обязательных параметров в POST запросе на эндпоинт /api/v1/courier/login. Проверка успешного логина курьера в системе",
+  "descriptionHtml" : "<p>Отправка всех обязательных параметров в POST запросе на эндпоинт /api/v1/courier/login. Проверка успешного логина курьера в системе</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "description" : "Отправка всех обязательных параметров в POST запросе на эндпоинт /api/v1/courier/login. Проверка успешного логина курьера в системе",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Предустановка",
+      "time" : {
+        "start" : 1749020685146,
+        "stop" : 1749020685146,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Инициализация параметров login, password, courierLogin",
+      "time" : {
+        "start" : 1749020685146,
+        "stop" : 1749020685274,
+        "duration" : 128
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Отправка POST запроса на эндпоинт /api/v1/courier. Создание курьера",
+        "time" : {
+          "start" : 1749020685146,
+          "stop" : 1749020685274,
+          "duration" : 128
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "courier",
+          "value" : "CourierRequest(login=pxgVBuaftnuml, password=gC6UVY, firstName=jtgWeKCBtF)"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 1,
+      "hasContent" : true
+    }, {
+      "name" : "Отправка POST запроса на эндпоинт /api/v1/courier/login. Логин курьера в системе",
+      "time" : {
+        "start" : 1749020685274,
+        "stop" : 1749020685384,
+        "duration" : 110
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "courierLogin",
+        "value" : "CourierLoginRequest(login=pxgVBuaftnuml, password=gC6UVY)"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "Удаление, созданного курьера",
+      "time" : {
+        "start" : 1749020686218,
+        "stop" : 1749020686459,
+        "duration" : 241
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Отправка POST запроса на эндпоинт /api/v1/courier/login. Логин курьера в системе",
+        "time" : {
+          "start" : 1749020686218,
+          "stop" : 1749020686330,
+          "duration" : 112
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "courierLogin",
+          "value" : "CourierLoginRequest(login=pxgVBuaftnuml, password=gC6UVY)"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "Отправка DELETE запроса на эндпоинт /api/v1/courier/:id. Удаление курьера",
+        "time" : {
+          "start" : 1749020686330,
+          "stop" : 1749020686459,
+          "duration" : 129
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "courierId",
+          "value" : "537145"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 2,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 7,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "ru.practicum.services.qa.scooter.tests"
+  }, {
+    "name" : "testClass",
+    "value" : "ru.practicum.services.qa.scooter.tests.PostCourierLoginTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "postCourierLoginAllParamSuccessTest"
+  }, {
+    "name" : "suite",
+    "value" : "ru.practicum.services.qa.scooter.tests.PostCourierLoginTest"
+  }, {
+    "name" : "host",
+    "value" : "matebook_stolyk"
+  }, {
+    "name" : "thread",
+    "value" : "13160@matebook_stolyk.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "7c2d0fd6c9c5f602.json",
+  "parameterValues" : [ ]
+}

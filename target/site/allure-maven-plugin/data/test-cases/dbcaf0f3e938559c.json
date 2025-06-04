@@ -1,0 +1,186 @@
+{
+  "uid" : "dbcaf0f3e938559c",
+  "name" : "Проверка получения ответа 409 Сonflict при отправке POST запроса на эндпоинт /api/v1/courier с повторяющимся логином",
+  "fullName" : "ru.practicum.services.qa.scooter.tests.PostCourierTest.postCourierSameLoginConflictTest",
+  "historyId" : "bcd8e751ac9348abeaf639e6bc526e10",
+  "time" : {
+    "start" : 1749020689008,
+    "stop" : 1749020689546,
+    "duration" : 538
+  },
+  "description" : "Получение ошибки 409 Сonflict при создании курьера c повторяющимся логином методом POST /api/v1/courier",
+  "descriptionHtml" : "<p>Получение ошибки 409 Сonflict при создании курьера c повторяющимся логином методом POST /api/v1/courier</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "description" : "Получение ошибки 409 Сonflict при создании курьера c повторяющимся логином методом POST /api/v1/courier",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Предустановка",
+      "time" : {
+        "start" : 1749020689008,
+        "stop" : 1749020689008,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Инициализация обекта класса CourierRequest",
+      "time" : {
+        "start" : 1749020689008,
+        "stop" : 1749020689008,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Отправка POST запроса на эндпоинт /api/v1/courier. Создание курьера",
+      "time" : {
+        "start" : 1749020689008,
+        "stop" : 1749020689132,
+        "duration" : 124
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "courier",
+        "value" : "CourierRequest(login=ikrRsLFndxcDh, password=test836, firstName=DsvGwoYyLh)"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "Отправка POST запроса на эндпоинт /api/v1/courier. Создание курьера",
+      "time" : {
+        "start" : 1749020689132,
+        "stop" : 1749020689335,
+        "duration" : 203
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "courier",
+        "value" : "CourierRequest(login=ikrRsLFndxcDh, password=pxecUI, firstName=jhTZoFKcky)"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "Удаление созданного курьера",
+      "time" : {
+        "start" : 1749020689351,
+        "stop" : 1749020689546,
+        "duration" : 195
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Отправка POST запроса на эндпоинт /api/v1/courier/login. Логин курьера в системе",
+        "time" : {
+          "start" : 1749020689351,
+          "stop" : 1749020689423,
+          "duration" : 72
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "courierLogin",
+          "value" : "CourierLoginRequest(login=ikrRsLFndxcDh, password=test836)"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "Отправка DELETE запроса на эндпоинт /api/v1/courier/:id. Удаление курьера",
+        "time" : {
+          "start" : 1749020689424,
+          "stop" : 1749020689546,
+          "duration" : 122
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "courierId",
+          "value" : "537150"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 2,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 7,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "ru.practicum.services.qa.scooter.tests"
+  }, {
+    "name" : "testClass",
+    "value" : "ru.practicum.services.qa.scooter.tests.PostCourierTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "postCourierSameLoginConflictTest"
+  }, {
+    "name" : "suite",
+    "value" : "ru.practicum.services.qa.scooter.tests.PostCourierTest"
+  }, {
+    "name" : "host",
+    "value" : "matebook_stolyk"
+  }, {
+    "name" : "thread",
+    "value" : "13160@matebook_stolyk.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "dbcaf0f3e938559c.json",
+  "parameterValues" : [ ]
+}
