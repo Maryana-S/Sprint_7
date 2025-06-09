@@ -1,0 +1,150 @@
+{
+  "uid" : "7da830722143400d",
+  "name" : "Проверка получения ответа 400 Bad Request при отправке POST запроса на эндпоинт /api/v1/courier с пустым значением password",
+  "fullName" : "ru.practicum.services.qa.scooter.tests.PostCourierTest.postCourierWithoutPasswordBadRequestTest",
+  "historyId" : "fdb2b5c773132891e02a64479c29fe0f",
+  "time" : {
+    "start" : 1749020690400,
+    "stop" : 1749020690662,
+    "duration" : 262
+  },
+  "description" : "Получение ошибки 400 Bad Request при создании курьера методом POST /api/v1/courier. Пустое значение в поле password",
+  "descriptionHtml" : "<p>Получение ошибки 400 Bad Request при создании курьера методом POST /api/v1/courier. Пустое значение в поле password</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "description" : "Получение ошибки 400 Bad Request при создании курьера методом POST /api/v1/courier. Пустое значение в поле password",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Предустановка",
+      "time" : {
+        "start" : 1749020690400,
+        "stop" : 1749020690400,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Инициализация обекта класса CourierRequest",
+      "time" : {
+        "start" : 1749020690401,
+        "stop" : 1749020690401,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Отправка POST запроса на эндпоинт /api/v1/courier. Создание курьера",
+      "time" : {
+        "start" : 1749020690401,
+        "stop" : 1749020690534,
+        "duration" : 133
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "courier",
+        "value" : "CourierRequest(login=SkEzViVwLyBMD, password=, firstName=ezgctIZNvX)"
+      } ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : true
+    }, {
+      "name" : "Удаление созданного курьера",
+      "time" : {
+        "start" : 1749020690545,
+        "stop" : 1749020690662,
+        "duration" : 117
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Отправка POST запроса на эндпоинт /api/v1/courier/login. Логин курьера в системе",
+        "time" : {
+          "start" : 1749020690545,
+          "stop" : 1749020690662,
+          "duration" : 117
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "courierLogin",
+          "value" : "CourierLoginRequest(login=SkEzViVwLyBMD, password=test528)"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 1,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 5,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "ru.practicum.services.qa.scooter.tests"
+  }, {
+    "name" : "testClass",
+    "value" : "ru.practicum.services.qa.scooter.tests.PostCourierTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "postCourierWithoutPasswordBadRequestTest"
+  }, {
+    "name" : "suite",
+    "value" : "ru.practicum.services.qa.scooter.tests.PostCourierTest"
+  }, {
+    "name" : "host",
+    "value" : "matebook_stolyk"
+  }, {
+    "name" : "thread",
+    "value" : "13160@matebook_stolyk.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "7da830722143400d.json",
+  "parameterValues" : [ ]
+}

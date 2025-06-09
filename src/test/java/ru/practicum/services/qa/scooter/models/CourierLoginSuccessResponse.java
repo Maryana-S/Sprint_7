@@ -1,4 +1,12 @@
 package ru.practicum.services.qa.scooter.models;
 
-public class CourierLoginResponse {
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+public class CourierLoginSuccessResponse {
+
+    private Integer id;
+
 }

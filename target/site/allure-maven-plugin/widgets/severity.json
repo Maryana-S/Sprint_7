@@ -1,0 +1,191 @@
+[ {
+  "uid" : "dbcaf0f3e938559c",
+  "name" : "Проверка получения ответа 409 Сonflict при отправке POST запроса на эндпоинт /api/v1/courier с повторяющимся логином",
+  "time" : {
+    "start" : 1749020689008,
+    "stop" : 1749020689546,
+    "duration" : 538
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "df76a1bb1b8203e3",
+  "name" : "Проверка получения ответа 400 Bad Request при отправке POST запроса на эндпоинт /api/v1/courier/login с пустым значением password",
+  "time" : {
+    "start" : 1749020687007,
+    "stop" : 1749020687500,
+    "duration" : 493
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "49cb25937def3702",
+  "name" : "Проверка, что при отправке POST запроса на эндпоинт /api/v1/orders с различными значениями color заказ успешно создается",
+  "time" : {
+    "start" : 1749020691309,
+    "stop" : 1749020691500,
+    "duration" : 191
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "221463cc9972fc3a",
+  "name" : "Проверка, что возвращается список заказов, при отправке GET запроса c limit, page и nearestStation на эндпоинт /api/v1/orders",
+  "time" : {
+    "start" : 1749020683168,
+    "stop" : 1749020685141,
+    "duration" : 1973
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a91ed37bc8f967b1",
+  "name" : "Проверка получения ответа 404 Not Found при отправке POST запроса на эндпоинт /api/v1/courier/login с некорректным логином",
+  "time" : {
+    "start" : 1749020686461,
+    "stop" : 1749020687005,
+    "duration" : 544
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d4034be35cb11cf6",
+  "name" : "Проверка успешного создания курьера при отправке POST запроса на эндпоинт /api/v1/courier с пустым значением в поле firstName",
+  "time" : {
+    "start" : 1749020689950,
+    "stop" : 1749020690387,
+    "duration" : 437
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "623b0b1d19fe6575",
+  "name" : "Проверка получения ответа 400 Bad Request при отправке POST запроса на эндпоинт /api/v1/courier/login с пустым значением login",
+  "time" : {
+    "start" : 1749020688065,
+    "stop" : 1749020688638,
+    "duration" : 573
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2613a88c7939dc09",
+  "name" : "Проверка, что возвращается список заказов, при отправке GET запроса c courierId и nearestStation на эндпоинт /api/v1/orders",
+  "time" : {
+    "start" : 1749020681969,
+    "stop" : 1749020683166,
+    "duration" : 1197
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ef79708480173704",
+  "name" : "Проверка получения ответа 404 Not Found при отправке POST запроса на эндпоинт /api/v1/courier/login с некорректным паролем",
+  "time" : {
+    "start" : 1749020687502,
+    "stop" : 1749020688064,
+    "duration" : 562
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7da830722143400d",
+  "name" : "Проверка получения ответа 400 Bad Request при отправке POST запроса на эндпоинт /api/v1/courier с пустым значением password",
+  "time" : {
+    "start" : 1749020690400,
+    "stop" : 1749020690662,
+    "duration" : 262
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b0cbb1c1dd53458a",
+  "name" : "Проверка, что при отправке POST запроса на эндпоинт /api/v1/orders с различными значениями color заказ успешно создается",
+  "time" : {
+    "start" : 1749020690678,
+    "stop" : 1749020691028,
+    "duration" : 350
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "896adbf2fe0a5a6",
+  "name" : "Проверка получения ответа 400 Bad Request при отправке POST запроса на эндпоинт /api/v1/courier с пустым значением login",
+  "time" : {
+    "start" : 1749020688642,
+    "stop" : 1749020689006,
+    "duration" : 364
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "60b0b0b219bd886b",
+  "name" : "Проверка, что возвращается список заказов, при отправке GET запроса без query параметров на эндпоинт /api/v1/orders",
+  "time" : {
+    "start" : 1749020679788,
+    "stop" : 1749020681967,
+    "duration" : 2179
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2a2d6c6c6bf33daa",
+  "name" : "Проверка успешного создания курьера при отправке POST запроса на эндпоинт /api/v1/courier со всеми полями",
+  "time" : {
+    "start" : 1749020689548,
+    "stop" : 1749020689948,
+    "duration" : 400
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5f32815031879b3f",
+  "name" : "Проверка, что при отправке POST запроса на эндпоинт /api/v1/orders с различными значениями color заказ успешно создается",
+  "time" : {
+    "start" : 1749020691033,
+    "stop" : 1749020691307,
+    "duration" : 274
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7c2d0fd6c9c5f602",
+  "name" : "Проверка успешного логина курьера в системе (статус код 200) при отправке всех обязательных параметров в POST запросе на эндпоинт /api/v1/courier/login",
+  "time" : {
+    "start" : 1749020685145,
+    "stop" : 1749020686459,
+    "duration" : 1314
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "72ff1308a3676e94",
+  "name" : "Проверка, что возвращается список заказов, при отправке GET запроса c courierId на эндпоинт /api/v1/orders",
+  "time" : {
+    "start" : 1749020678376,
+    "stop" : 1749020679782,
+    "duration" : 1406
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9d5b7cbeaee73132",
+  "name" : "Проверка, что при отправке POST запроса на эндпоинт /api/v1/orders с различными значениями color заказ успешно создается",
+  "time" : {
+    "start" : 1749020691502,
+    "stop" : 1749020691831,
+    "duration" : 329
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "58a57767cfd03621",
+  "name" : "Проверка, что возвращается список заказов, при отправке GET запроса c limit и page на эндпоинт /api/v1/orders",
+  "time" : {
+    "start" : 1749020672479,
+    "stop" : 1749020678308,
+    "duration" : 5829
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

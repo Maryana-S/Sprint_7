@@ -1,0 +1,255 @@
+{
+  "uid" : "60b0b0b219bd886b",
+  "name" : "Проверка, что возвращается список заказов, при отправке GET запроса без query параметров на эндпоинт /api/v1/orders",
+  "fullName" : "ru.practicum.services.qa.scooter.tests.GetOrdersTest.getOrdersNoQueryParamReturnOrdersTest",
+  "historyId" : "1c95c7828fa3d90fc01b694d12a14f99",
+  "time" : {
+    "start" : 1749020679788,
+    "stop" : 1749020681967,
+    "duration" : 2179
+  },
+  "description" : "Получение списка заказов. Отправка GET запроса без query параметров на эндпоинт /api/v1/orders",
+  "descriptionHtml" : "<p>Получение списка заказов. Отправка GET запроса без query параметров на эндпоинт /api/v1/orders</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "description" : "Получение списка заказов. Отправка GET запроса без query параметров на эндпоинт /api/v1/orders",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Предустановка",
+      "time" : {
+        "start" : 1749020679788,
+        "stop" : 1749020679788,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Инициализация параметров: login, password, courierId, trackId, orderId",
+      "time" : {
+        "start" : 1749020679788,
+        "stop" : 1749020680245,
+        "duration" : 457
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Отправка POST запроса на эндпоинт /api/v1/courier. Создание курьера",
+        "time" : {
+          "start" : 1749020679789,
+          "stop" : 1749020679907,
+          "duration" : 118
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "courier",
+          "value" : "CourierRequest(login=qUeXIydOTJbHm, password=FGDRAM9, firstName=Test)"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "Отправка POST запроса на эндпоинт /api/v1/courier/login. Логин курьера в системе",
+        "time" : {
+          "start" : 1749020679907,
+          "stop" : 1749020680023,
+          "duration" : 116
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "courierLogin",
+          "value" : "CourierLoginRequest(login=qUeXIydOTJbHm, password=FGDRAM9)"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "Отправка POST запроса на эндпоинт /api/v1/orders. Создание заказа",
+        "time" : {
+          "start" : 1749020680024,
+          "stop" : 1749020680159,
+          "duration" : 135
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "postOrders",
+          "value" : "PostOrdersRequest(firstName=Звёздочка, lastName=Баттерфляй, address=Мьюни, Королевский дворец, metroStation=4, phone=+7 999 999 99 99, rentTime=7, deliveryDate=2025-07-06, comment=На землю! К Марко <3, color=[BLACK])"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "Отправка GET запроса на эндпоинт /api/v1/orders/track. Получить заказ по его номеру",
+        "time" : {
+          "start" : 1749020680160,
+          "stop" : 1749020680244,
+          "duration" : 84
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "trackId",
+          "value" : "991319"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 4,
+      "hasContent" : true
+    }, {
+      "name" : "Отправка GET запроса на эндпоинт /api/v1/orders. Получение списка заказов",
+      "time" : {
+        "start" : 1749020680245,
+        "stop" : 1749020681554,
+        "duration" : 1309
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Удаление тестовых данных",
+      "time" : {
+        "start" : 1749020681565,
+        "stop" : 1749020681967,
+        "duration" : 402
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Отправка DELETE запроса на эндпоинт /api/v1/courier/:id. Удаление курьера",
+        "time" : {
+          "start" : 1749020681565,
+          "stop" : 1749020681706,
+          "duration" : 141
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "courierId",
+          "value" : "537142"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "Отправка PUT запроса на эндпоинт /api/v1/orders/finish/:id. Завершить заказ",
+        "time" : {
+          "start" : 1749020681706,
+          "stop" : 1749020681838,
+          "duration" : 132
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "orderId",
+          "value" : "478482"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      }, {
+        "name" : "Отправка PUT запроса на эндпоинт /api/v1/orders/cancel. Отменить заказ",
+        "time" : {
+          "start" : 1749020681839,
+          "stop" : 1749020681967,
+          "duration" : 128
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "trackId",
+          "value" : "991319"
+        } ],
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "stepsCount" : 0,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 3,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 11,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "ru.practicum.services.qa.scooter.tests"
+  }, {
+    "name" : "testClass",
+    "value" : "ru.practicum.services.qa.scooter.tests.GetOrdersTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "getOrdersNoQueryParamReturnOrdersTest"
+  }, {
+    "name" : "suite",
+    "value" : "ru.practicum.services.qa.scooter.tests.GetOrdersTest"
+  }, {
+    "name" : "host",
+    "value" : "matebook_stolyk"
+  }, {
+    "name" : "thread",
+    "value" : "13160@matebook_stolyk.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit4"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "60b0b0b219bd886b.json",
+  "parameterValues" : [ ]
+}
